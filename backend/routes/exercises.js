@@ -57,7 +57,7 @@ router.route("/update/:id").post((req, res) => {
 // delete
 router.route("/:id").delete((req, res) => {
   Exercise.findByIdAndDelete(req.params.id)
-    .then(exercise => res.json("Exercise Deleted"))
+    .then(() => res.json("Exercise Deleted"))
     .catch(err => res.status(400).json("Error ", err));
 });
 
